@@ -68,6 +68,5 @@ async fn home_html(
     axum::extract::Json(data): axum::extract::Json<Payload>
 ) -> String {
     files::create_new_file(data.file_data, data.extension).await;
-    // include_str!("./frontend/index.html").into()
-    "POST foo".to_string()
+    "File created successfully".to_string()
 }
